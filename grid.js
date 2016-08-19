@@ -73,8 +73,10 @@ var gridColumns = function() {
 }
 
 window.onload = function () {
+	console.log('grid onload');
 	gridColumns();
 }
 window.onresize = function () {
+	console.log('grid onresize');
 	gridColumns();
 }
