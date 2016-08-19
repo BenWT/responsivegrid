@@ -1,6 +1,5 @@
 #grid {
-	margin: 1.5rem;
-	width: calc(100% - 3rem);
+	width: 100% - 3rem;
 
 	font-size: 0;
 }
