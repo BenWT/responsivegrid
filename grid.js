@@ -72,6 +72,9 @@ var gridColumns = function() {
 	}
 }
 
+window.onload = function () {
+	gridColumns();
+}
 window.onresize = function () {
 	gridColumns();
 }
