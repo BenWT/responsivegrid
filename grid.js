@@ -44,11 +44,17 @@ function sizeGrid(columns) {
 	var grids = document.getElementsByClassName('grid');
 
 	if (grids !== null) {
+
+		console.log('grid found');
+
 		for (var i = 0; i < grids.length; i++) {
 			var grid = grids[i],
 				items = grid.getElementsByClassName('item');
 
 			if (items !== null) {
+
+				console.log('items found');
+
 				var itemSize = (grid.offsetWidth / columns) + 'px';
 
 				for (var j = 0; j < items.length; j++) {
