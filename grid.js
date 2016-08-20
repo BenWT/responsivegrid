@@ -41,17 +41,23 @@ function isLandscape() {
 }
 
 function sizeGrid(columns) {
-	var items = document.getElementsByClassName('item'),
-		grid = document.getElementById('grid');
+	var grids = document.getElementsByClassName('grid');
 
-	if (items !== null && grid !== null) {
-		var itemSize = (grid.offsetWidth / columns) + 'px';
+	if (grids !== null) {
+		for (var i = 0; i < grids.length; i++) {
+			var grid = grids[i],
+				items = grid.getElementsByClassName('item');
 
-		for (var i = 0; i < items.length; i++) {
-			var item = items[i];
+			if (items !== null) {
+				var itemSize = (grid.offsetWidth / columns) + 'px';
 
-			item.style.width = itemSize;
-			item.style.height = itemSize;
+				for (var j = 0; j < items.length; j++) {
+					var item = items[i];
+
+					item.style.width = itemSize;
+					item.style.height = itemSize;
+				}
+			}
 		}
 	}
 }
