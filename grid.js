@@ -58,7 +58,7 @@ function sizeGrid(columns) {
 				var itemSize = (grid.offsetWidth / columns) + 'px';
 
 				for (var j = 0; j < items.length; j++) {
-					var item = items[i];
+					var item = items[j];
 
 					item.style.width = itemSize;
 					item.style.height = itemSize;
