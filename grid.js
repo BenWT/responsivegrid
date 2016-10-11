@@ -45,15 +45,11 @@ function sizeGrid(columns) {
 
 	if (grids !== null) {
 
-		console.log('grid found');
-
 		for (var i = 0; i < grids.length; i++) {
 			var grid = grids[i],
 				items = grid.getElementsByClassName('item');
 
 			if (items !== null) {
-
-				console.log('items found');
 
 				var itemSize = (grid.offsetWidth / columns) + 'px';
 
@@ -85,10 +81,8 @@ var gridColumns = function() {
 }
 
 window.onload = function () {
-	console.log('grid onload');
 	gridColumns();
 }
 window.onresize = function () {
-	console.log('grid onresize');
 	gridColumns();
 }
