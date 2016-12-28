@@ -40,7 +40,7 @@ function isLandscape() {
 	}
 }
 
-function sizeGrid(columns) {
+function sizeGrid(columns, square) {
 	var grids = document.getElementsByClassName('grid');
 
 	if (grids !== null) {
@@ -51,13 +51,14 @@ function sizeGrid(columns) {
 
 			if (items !== null) {
 
-				var itemSize = (grid.offsetWidth / columns) + 'px';
+				var itemSize = (grid.offsetWidth / columns);
 
 				for (var j = 0; j < items.length; j++) {
 					var item = items[j];
 
-					item.style.width = itemSize;
-					item.style.height = itemSize;
+					item.style.width = itemSize + 'px';
+					if (square) item.style.height = itemSize + 'px';
+					else item.style.height = (0.7 * itemSize) + 'px';
 				}
 			}
 		}
@@ -74,9 +75,17 @@ function gridItemMouseOut(el) {
 
 var gridColumns = function() {
 	if (isLandscape()) {
-		sizeGrid(3);
+		if (window.innerWidth >= 1200) {
+			sizeGrid(5, true);
+		} else if (window.innerWidth >= 992) {
+			sizeGrid(4, true);
+		} else if (window.innerWidth >= 768) {
+			sizeGrid(3, true);
+		} else {
+			sizeGrid(2, true);
+		}
 	} else {
-		sizeGrid(1);
+		sizeGrid(1, false);
 	}
 }
 
