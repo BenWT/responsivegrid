@@ -76,13 +76,11 @@ function gridItemMouseOut(el) {
 var gridColumns = function() {
 	if (isLandscape()) {
 		if (window.innerWidth >= 1200) {
-			sizeGrid(5, true);
-		} else if (window.innerWidth >= 992) {
 			sizeGrid(4, true);
 		} else if (window.innerWidth >= 768) {
 			sizeGrid(3, true);
 		} else {
-			sizeGrid(2, true);
+			sizeGrid(2, false);
 		}
 	} else {
 		sizeGrid(1, false);
