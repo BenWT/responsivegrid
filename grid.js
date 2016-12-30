@@ -51,7 +51,7 @@ function sizeGrid(columns, square) {
 
 			if (items !== null) {
 
-				var itemSize = Math.floor(grid.offsetWidth / columns);
+				var itemSize = Math.floor(parseInt(grid.offsetWidth / columns));
 
 				for (var j = 0; j < items.length; j++) {
 					var item = items[j];
